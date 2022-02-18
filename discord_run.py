@@ -34,7 +34,7 @@ async def remote(ctx,link,res):
         res = "-f 'bestvideo+bestaudio'"
     else:
         res = ""
-    download_link = "yt-dlp" + " " + res + " " + link
+    download_link = "cd discord_downloads &&" +" " + "yt-dlp" + " " + res + " " + link
     process = subprocess.Popen(['ansible','Indra','-m','shell','-a',download_link],stdout=subprocess.PIPE,stderr=subprocess.PIPE)
     stdout, stderr = process.communicate()
     print(stdout)
